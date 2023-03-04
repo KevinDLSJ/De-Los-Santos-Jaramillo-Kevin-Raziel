@@ -1,0 +1,127 @@
+:root{
+    /*hsl para darle a los colores saturacion y luminusida*/
+    --green: hsl(162, 45%, 56%);
+    --lead: hsl(162, 2%, 56%);
+    --blue: hsl(220, 85%, 57%);
+    --violet: hsl(272, 92%, 32%);
+    --tex-white: hsl(0, 0%, 100%);
+    --tex-light-gray: hsl(0, 0%, 90%);
+    --body-bg-color: hsl(200, 54%, 12%);
+    --glass-bg-color: hsla(0, 0%, 100%, 0.05);
+    --border-color: hsla(0, 0%, 100%, 0.25);
+    --blur: blur(10px);
+    --button-hover-color: hsla(0, 0%, 0%, 0.3);
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body{
+    background: #f2f2f2;
+    color: var(--tex-light-gray);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+.form-main{
+    /*vh para que ocupe toda la pantalla*/
+    min-height: 100vh;
+    padding: 40px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form-contenedor{
+    width: 100%;
+    max-width: 450px;
+    position: relative;
+    z-index: 1;
+}
+.form-contenedor .box{
+    border-color: var(--body-bg-color);
+    border: 1px solid var(--border-color);
+    padding: 40px 50px;
+    border-radius: 20px;
+    background-color: #2174d4;
+    box-shadow: black 60 60 60;
+
+}
+.form-contenedor h3{
+    font-size: 20px;
+    text-align: center;
+    line-height: 1.2;
+    color: var(--tex-white);
+    font-weight: 500;
+}
+.form-contenedor form{
+    margin: 25px 0 20px;
+}
+.form-contenedor .input-box{
+    margin: 25px;
+    color: #f2f2f2;
+}
+.form-contenedor .input-box::placeholder{
+    /*Hereda las propiedades del padre*/
+    color: white;
+    opacity: 0;
+}
+.form-contenedor .input-control{
+    display: block;
+    height: 40px;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+    color: inherit ;
+    font-weight: inherit;
+    font-family: inherit;
+    font-size: 16px; 
+}
+.form-contenedor .input-control:focus{
+    /*elimina en contorno de email y password*/
+    outline: none;
+}
+.form-contenedor .input-link{
+    margin-top: 10px;
+    text-align: right;
+}
+.form-contenedor .bot{
+    height: 45px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 500;
+    /*fuerza a que la primer letra cambie a mayuscula*/
+    text-transform: capitalize;
+    font-family: inherit;
+    /*Para que cambie el cursor */
+    cursor: pointer;
+    border-radius: 15px;
+    user-select: none;
+    position: relative;
+    overflow: hidden;
+    border: none;
+    z-index: 1;
+}
+.form-contenedor .bot::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    transition: background-color 0.5s ease;
+    z-index: -1;
+}
+.form-contenedor .bot:hover::before{
+    background-color: var(--button-hover-color);
+}
+.form-contenedor p{
+    text-align: center;
+}
